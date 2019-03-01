@@ -1,0 +1,71 @@
+/*
+a { selector(선택자)
+    < Declaration
+     color:cyan(Property:value);
+  }
+  */ 
+  body {
+    margin:0px;
+  }
+/*<!-- 우선순위: id > class > tag Selector -->
+  #id
+  .class
+  tag 
+*/
+  a { 
+    color:black;
+    text-decoration: none; 
+  }
+  .saw { 
+    color:black;
+  }
+  #active {
+    color:black;
+  }
+  #grid {
+    display: grid;
+    grid-template-columns: 170px 1fr;
+  }
+  #grid #article {
+    padding:30px;
+  }
+  #article_content {
+    padding-left: 25px;
+  }
+
+  b {
+    color:black;
+  }
+
+  h1, h2 {
+    font-size: 45px;
+    text-align: center;
+    border-bottom: 4px double gray;
+    margin:0;
+    padding: 20px
+  }
+
+  h3 {
+    font-size: 30px;
+    text-align: center;
+  }
+
+  #grid ol {
+    border-right: 4px double gray;
+    width:150px;
+    margin:0px;
+    padding-left:44px;
+    padding-top: 44px; 
+  }
+
+  @media(max-width:400px) {
+    #grid {
+      display: block;
+    }
+    #grid ol {
+      border-right: none;
+    }
+    h1, h2 {
+      border-bottom:none;
+    }
+  }
