@@ -1,3 +1,33 @@
+<!-- 
+#1. 자바스크립트의 특성
+
+- 스타일 속성을 동적으로 변경
+- 동적으로 변경되기 때문에 자바스크립트는 방대한 양의 코드에는 부적합하다.
+- 디버깅도 힘들다. 
+
+#2. 우선순위
+
+- .은 class
+- #은 id
+- empty는 tag 
+
+- 우선순위: id > class > tag
+
+포괄적인 건 class로 만들고
+예외적인 부분은 id로 만든다.
+
+#3. All about Program*
+
+- Program: 음악의 연주 "순서"
+- Programming: 순서를 만드는 "행위"
+- Programmer: 순서를 만드는 "사람"
+ 
+#4. HTML VS JavaScript
+
+- HTML은 시간의 순서와 상관이 없다.
+- JavaScript는 사용자와 상호작용해야 하는 동적인 프로그램
+
+-->
 <!doctype html>
 <html>
 <head>
@@ -10,10 +40,56 @@
 	<input type="text" id="userAge" onkeydown="myKeydownFunc()">
 	<input type="text" id="demo" onkeydown="keydownFunction()" onkeyup="keyupFunction()">
 
+	<input type="button" value="night_single" onclick=
+	"document.querySelector('body').style.backgroundColor='#99ffcc';
+	document.querySelector('body').style.color='white'; ">
+
+	<input type="button" value="day_single" onclick="document.querySelector('body').style.backgroundColor='#ff4d94';
+	document.querySelector('body').style.color='white';">
+
+<!-- using function -->
+	<input id="night_day" type="button" value="night" onclick="
+	this.value = changeBasicColor(this.value);
+	// var changedValue = changeBasicColor(this.value);
+	
+	// this.value = changedValue;
+
+	// if(document.querySelector('#night_day').value === 'night')
+	// {
+	// 	document.querySelector('body').style.backgroundColor = '#99ffcc';
+	// 	document.querySelector('body').style.color = 'white';
+	// 	setTimeout(function() { alert('[Night] Crystal night!'); }, 1);
+	// 	document.querySelector('#night_day').value = 'day';
+	// 	document.querySelector('#syncButton').value = 'day';
+	// }
+	// else
+	// {
+	// 	document.querySelector('body').style.backgroundColor = '#ff4d94';
+	// 	document.querySelector('body').style.color = 'white';
+	// 	setTimeout(function() { alert('[Day] Pinky day!'); }, 1);
+	// 	document.querySelector('#night_day').value = 'night';
+	// 	document.querySelector('#syncButton').value = 'night';
+	// }
+	">
+	<!-- using this keyword & var keyword -->
+	<input type="button" value="night" onclick="
+	var target = document.querySelector('body');
+
+	if(this.value === 'night')
+	{
+		target.style.backgroundColor = '#99ffcc';
+		target.style.color = 'white';
+		this.value = 'day';
+	}
+	else
+	{
+		target.style.backgroundColor = '#ff4d94';
+		target.style.color = 'white';
+		this.value = 'night';
+	}
+	">
 	<h1>JavaScript</h1>
 	<script>
-		document.write(1+1); // script와 html h와 다른점
-
 		function myKeydownFunc() {
 			document.getElementById("userName").style.backgroundColor = "red";
 			document.getElementById("userAge").style.backgroundColor = "green";
@@ -23,6 +99,20 @@
 		}
 		function keyupFunction() {
 			document.getElementById("demo").style.backgroundColor = "green";
+		}
+		function changeBasicColor(curVal) {
+			if(curVal === 'night')
+			{
+				document.querySelector('body').style.backgroundColor = '#99ffcc';
+				document.querySelector('body').style.color = 'white';
+				return "day";
+			}
+			else
+			{
+				document.querySelector('body').style.backgroundColor = '#ff4d94';
+				document.querySelector('body').style.color = 'white';
+				return "night";
+			}
 		}
 	</script>
 </body>
