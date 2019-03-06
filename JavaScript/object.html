@@ -12,24 +12,51 @@
       "designer" : "maggie_kim"
     };
 
+    coworkers.sign = "mag";
+    coworkers["date"] = "20190305";
+
     document.write("programmer : " + coworkers.programmer + "<br>");
     document.write("designer : " + coworkers.designer + "<br>");
-
-    // var coworkerList = coworkers[10];
-
-    // for(var i = 0; i < 10; i++)
-    // {
-    //   coworkerList[i] = coworkers("1", "2");
-    // }
-    // for(var key in coworkerList)
-    // {
-    //   console.log(key);      
-    // }
-
+    document.write("sign : " + coworkers.sign + "<br>");
+    document.write("date : " + coworkers.date + "<br>");
+  </script>
+  <h1>Iterator Mode</h1>
+  <script>
+    for(var key in coworkers)
+    {
+      document.write(key + '<br>');
+    }
+    // coworkers.showAll();
     coworkers.showAll = function() {
+      document.write("=============" + "<br>");
+
       for(var key in this)
       {
-        document.write(key);
+        if(key != "showAll")
+        {
+          document.write(key + '<br>');
+        }
+      }
+    }
+    coworkers.showAll();
+  </script>
+  <h1>Using Object Array</h1>
+  <script type="text/javascript">
+    var books = [];
+
+    var new_book = {id: "book1", name:"twilight", category:"movies"};
+    books.push(new_book);
+    
+    new_book = {id: "book2", name: "The_call", category: "movies"};
+    books.push(new_book);
+
+    for(var i = 0; i < books.length; i++)
+    {
+      document.write("========<br>" );
+      var target = books[i];
+      for(var key in target)
+      {
+        document.write(key + "/" + target[key] + "<br>");
       }
     }
   </script>
