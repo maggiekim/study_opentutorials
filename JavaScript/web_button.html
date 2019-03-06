@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+  <title>WEB - CSS</title>
+  <meta charset="utf-8">
+</head>
+<body>
+  <h1><a href="index.html">WEB</a></h1>
+  <input id="night_day" type="button" value="night" onclick="
+  changeBasicColor(this);
+  ">
+  <input id="night_day" type="button" value="night" onclick="
+  changeBasicColor(this);
+  ">
+  <script>
+    function setLinksColor(color)
+    {
+     var selectorList = document.querySelectorAll('a');
+     for(var i = 0; i < selectorList.length; i++)
+     {
+        // console.log(selectorList[i]);
+        selectorList[i].style.color = color;
+      }
+    }
+    function setBodyColor(color)
+    {
+      document.querySelector('body').style.color = color;
+    }
+    function changeBasicColor(curVal) {
+      if(curVal.value === 'night')
+      {
+        // change background color
+        document.querySelector('body').style.backgroundColor = '#99ffcc';
+        setBodyColor('white');
+        setLinksColor('green');
+        curVal.value = "day";
+      }
+      else
+      {
+      // change background color
+      document.querySelector('body').style.backgroundColor = '#ff4d94';
+      setBodyColor('white');
+      setLinksColor('powderblue');
+      curVal.value = "night";
+    }
+  }
+</script>
+<div id="grid">
+  <ol>
+    <li><a>HTML</a></li>
+    <li><a>CSS</a></li>
+    <li><a>JavaScript</a></li>
+  </ol>
+  <div id="article">
+    <h2>HTML</h2>
+    <p>
+      Hypertext Markup Language (HTML) is the standard markup language for creating web pages and web applications. With Cascading Style Sheets (CSS) and JavaScript, it forms a triad of cornerstone technologies for the World Wide Web. Web browsers receive HTML documents from a web server or from local storage and render the documents into multimedia web pages. HTML describes the structure of a web page semantically and originally included cues for the appearance of the document. (by wikipedia)
+    </p>
+  </div>
+</div>
+</body>
+</html>

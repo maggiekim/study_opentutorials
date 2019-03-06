@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+  <title>WEB - CSS</title>
+  <meta charset="utf-8">
+</head>
+<body>
+  <h1> object </h1>
+  <script>
+    var coworkers = {
+      "programmer" : "maggie",
+      "designer" : "maggie_kim"
+    };
+
+    document.write("programmer : " + coworkers.programmer + "<br>");
+    document.write("designer : " + coworkers.designer + "<br>");
+
+    // var coworkerList = coworkers[10];
+
+    // for(var i = 0; i < 10; i++)
+    // {
+    //   coworkerList[i] = coworkers("1", "2");
+    // }
+    // for(var key in coworkerList)
+    // {
+    //   console.log(key);      
+    // }
+
+    coworkers.showAll = function() {
+      for(var key in this)
+      {
+        document.write(key);
+      }
+    }
+  </script>
+</body>
+</html>
